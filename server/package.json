@@ -1,0 +1,42 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "child_process": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fast-csv": "^4.0.2",
+    "gmail-send": "^1.8.10",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.3",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.2",
+    "python-shell": "^1.0.8",
+    "randomstring": "^1.1.5",
+    "request": "^2.88.0",
+    "save": "^2.4.0",
+    "sharp": "^0.23.4",
+    "twilio": "^3.39.1",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.0.1",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2"
+  }
+}
