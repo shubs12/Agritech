@@ -13,7 +13,7 @@
           <div class="card-body text-secondary">
           <h5 class="card-title">Price:- {{job.price}}</h5>
           <p class="card-text">Description:- some quick description of the given crop</p>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
+          <button type="submit" class="btn btn-primary" @click="submit(job)">Add to Cart</button>
         </div>
         </div>
         </div>
@@ -32,85 +32,35 @@
     </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'equipment',
   components: {
   },
   data () {
     return {
-      jobs: [
-        {
-          name: 'Digging Trowel',
-          id: 1,
-          price: 250
-        },
-        {
-          name: 'Hand Hoe',
-          id: 2,
-          price: 265
-        },
-        {
-          name: 'Sickle',
-          id: 3,
-          price: 350
-        },
-        {
-          name: 'Mini Tiller',
-          id: 4,
-          price: 8000
-        },
-        {
-          name: 'PitchFork',
-          id: 5,
-          price: 359
-        },
-        {
-          name: 'Fruit Picker',
-          id: 6,
-          price: 200
-        },
-        {
-          name: 'Hand Spray',
-          id: 7,
-          price: 656
-        },
-        {
-          name: 'PickAxe',
-          id: 8,
-          price: 550
-        },
-        {
-          name: 'Shovel',
-          id: 9,
-          price: 430
-        },
-        {
-          name: 'Hedge Shear',
-          id: 10,
-          price: 275
-        },
-        {
-          name: 'Concrete Rake Wirewinding',
-          id: 11,
-          price: 350
-        }
-      ],
       displayjobs: [],
       currentPage: '1',
-      rows: 1,
+      rows: 2,
       perPage: 6,
       search: ''
     }
   },
   created () {
-    this.rows = this.jobs.length
+    this.rows = this.$store.getters.Equipment.length
   },
   computed: {
     filteredJobs: function () {
       const start = (this.currentPage - 1) * this.perPage
-      return this.jobs.filter((jobs) => {
+      return this.$store.getters.Equipment.filter((jobs) => {
         return jobs.name.match(this.search)
       }).slice(start, start + 6)
+    }
+  },
+  methods: {
+    ...mapActions(['addCart']),
+    submit: function (jobs) {
+      this.addCart(jobs)
     }
   }
 }

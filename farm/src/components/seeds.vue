@@ -13,7 +13,7 @@
           <div class="card-body text-secondary">
           <h5 class="card-title">Price :- {{jobs.price}}</h5>
           <p class="card-text"> Description:- some quick description of the given crop</p>
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
+          <button type="submit" class="btn btn-primary" @click="submit(jobs)">Add to Cart</button>
         </div>
         </div>
         </div>
@@ -32,93 +32,27 @@
     </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   components: {
   },
   data () {
     return {
-      jobs: [
-        {
-          name: 'Onion',
-          id: 1,
-          price: '99/kg'
-        },
-        {
-          name: 'Rice',
-          id: 2,
-          price: '140/kg'
-        },
-        {
-          name: 'Jowar',
-          id: 3,
-          price: '110/kg'
-        },
-        {
-          name: 'Maize',
-          id: 4,
-          price: '120/kg'
-        },
-        {
-          name: 'Wheat',
-          id: 5,
-          price: '90/kg'
-        },
-        {
-          name: 'Bajra',
-          id: 6,
-          price: '150/kg'
-        },
-        {
-          name: 'Sugarcane',
-          id: 7,
-          price: '100/kg'
-        },
-        {
-          name: 'Arhar',
-          id: 7,
-          price: '115/kg'
-        },
-        {
-          name: 'Cotton',
-          id: 8,
-          price: '200/kg'
-        },
-        {
-          name: 'Groundnut',
-          id: 9,
-          price: '300/kg'
-        },
-        {
-          name: 'Sesame',
-          id: 10,
-          price: '80/kg'
-        },
-        {
-          name: 'Banana',
-          id: 11,
-          price: '120/kg'
-        },
-        {
-          name: 'Cashewnut',
-          id: 12,
-          price: '180/kg'
-        }
-      ],
       displayjobs: [],
       currentPage: '1',
-      rows: 1,
+      rows: 2,
       perPage: 6,
       search: ''
     }
   },
   created () {
-    this.rows = this.jobs.length
+    this.rows = this.$store.getters.Seeds.length
   },
   computed: {
+    ...mapGetters(['Seeds']),
     filteredJobs: function () {
       const start = (this.currentPage - 1) * this.perPage
-      return this.jobs.filter((jobs) => {
+      return this.$store.getters.Seeds.filter((jobs) => {
         return jobs.name.match(this.search)
       }).slice(start, start + 6)
     }

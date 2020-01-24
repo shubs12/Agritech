@@ -5,16 +5,14 @@ const state = {
   login: [],
   loggedIn: false,
   token: '',
-  crops: [],
-  cart: []
+  crops: []
 }
 
 const getters = {
   allUsers: state => state.users,
   loggedIn: state => state.login,
   logIn: state => state.loggedIn,
-  allCrops: state => state.crops,
-  allCart: state => state.cart
+  allCrops: state => state.crops
 }
 
 const actions = {
@@ -32,9 +30,6 @@ const actions = {
   },
   getCrops ({commit}) {
     commit('geCrops')
-  },
-  addCart ({commit}, job) {
-    commit('addToCart')
   }
 }
 
@@ -98,9 +93,6 @@ const mutations = {
       .catch((error) => {
         console.log(error)
       })
-  },
-  addToCart (state, job) {
-    state.cart.push(job)
   }
 }
 

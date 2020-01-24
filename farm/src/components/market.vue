@@ -7,12 +7,12 @@
     </b-navbar-nav></div>
         </div>
         <div class="row">
-          <div class="col-sm-4" v-for="jobs in filteredJobs" :key="jobs.id" :name="jobs.name" >
+          <div class="col-sm-4" v-for="jobs in filteredJobs" :key="jobs.id" :name="jobs.item" >
         <div class="card border-secondary mb-4" id="card2" style="max-width: 22rem;">
-          <div class="card-header"><h4>{{jobs.name}}</h4></div>
+          <div class="card-header"><h4>{{jobs.item}} - &ensp; {{jobs.variety}}</h4></div>
           <div class="card-body text-secondary">
-          <h5 class="card-title">Price:- {{jobs.price}}</h5>
-          <h6 class="card-title">Available:- {{jobs.availabilty}}</h6>
+          <h5 class="card-title">Price:- {{jobs.cost}}</h5>
+          <h6 class="card-title">Available:- {{jobs.available}}</h6>
           <h6 class="card-title">Description:- {{jobs.desc}}</h6>
           <button type="submit" class="btn btn-primary">Buy Now</button>
         </div>
@@ -34,98 +34,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'market',
   components: {
   },
   data () {
     return {
-      jobs: [
-        {
-          name: 'ABC',
-          id: 1,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'CDE',
-          id: 2,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'EFG',
-          id: 3,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'GIC',
-          id: 4,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'IJK',
-          id: 5,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'KCM',
-          id: 6,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'MNO',
-          id: 7,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'OPC',
-          id: 8,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'QRS',
-          id: 9,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'STUC',
-          id: 10,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'UVW',
-          id: 11,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        },
-        {
-          name: 'UVWC',
-          id: 12,
-          price: '7800',
-          availabilty: '2500',
-          desc: 'the best discription of the crop'
-        }
-      ],
       displayjobs: [],
       currentPage: '1',
       rows: 1,
@@ -134,13 +49,14 @@ export default {
     }
   },
   created () {
-    this.rows = this.jobs.length
+    this.rows = this.$store.getters.Market.length
   },
   computed: {
+    ...mapGetters(['Market']),
     filteredJobs: function () {
       const start = (this.currentPage - 1) * this.perPage
-      return this.jobs.filter((jobs) => {
-        return jobs.name.match(this.search)
+      return this.$store.getters.Market.filter((jobs) => {
+        return jobs.item.match(this.search)
       }).slice(start, start + 9)
     }
   }

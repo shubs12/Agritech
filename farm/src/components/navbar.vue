@@ -96,7 +96,7 @@
       </li> -->
     </ul>
     <router-link to="/cart" >
-  <button id="show-btn" class="btn btn-secondary" style="margin-right:10px;" >Cart &ensp;<span class="badge badge-light">5</span>
+  <button id="show-btn" class="btn btn-secondary" style="margin-right:10px;" >Cart &ensp;<span class="badge badge-light">{{Cart.length}}</span>
       </button> </router-link>
 
   <!-- <b-modal id="bv-modal-example">
@@ -136,7 +136,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['logIn'])
+    ...mapGetters(['logIn', 'Cart'])
   }
 }
 </script>

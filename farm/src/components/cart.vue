@@ -1,21 +1,21 @@
 <template>
-<div class="card" style="margin:5%" id="card2" >
-  <div class=" row">
-    <div class="col-sm-4" :key="jobs.id" v-for="jobs in allCart">
-  <div class="card-body text-dark">
-<div class="card" id="card1">
-  <div class="card-body" >
-    <h5 class="card-title">{{jobs.name}}</h5>
-    <ul>
-    <li class="card-text">Price :- {{jobs.price}}</li>
-    </ul>
+  <div>
+    <div >
+      <div :key="cart.id" v-for="cart in Cart" >
+        <div class="card-body text-dark">
+          <div class="card" id="card2" style="max-width:40rem;">
+            <div class="card-body" >
+              <h4 class="card-title">{{cart.name}}</h4>
+                <ul>
+                  <li class="card-text">Price :- {{cart.price}}</li>
+                </ul>
+              <button type="submit" class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-  </div>
-</div>
-
-</div>
-</div>
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['allCart'])
+    ...mapGetters(['Cart'])
   },
   methods: {
     ...mapActions(['getCrops'])

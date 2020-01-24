@@ -78,7 +78,7 @@ export default {
     ...mapGetters(['loggedIn'])
   },
   methods: {
-    ...mapActions(['addCrops']),
+    ...mapActions(['addCrops', 'AddCrop']),
     onSubmit (e) {
       e.preventDefault()
       const crop = {
@@ -91,6 +91,7 @@ export default {
         available: this.boxes * this.perBox
       }
       this.addCrops(crop)
+      this.AddCrop(crop)
     }
   }
 }
