@@ -10,7 +10,7 @@ const client = require('twilio')(accountSid, authToken)
     client.messages
 .create({
     body: `Hello ${name}, welcome to the Farmers app and Your username and password are: Username: ${phone_no} and Password: ${rand_no} `,
-    from: '+18329242836',
+    from: '+13345399383',
     to: phone
 }).then(message => console.log(message.sid));
 

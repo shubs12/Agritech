@@ -1,8 +1,13 @@
 <template>
 <div>
 <div class="card text-white bg-dark mb-3" style="margin:5%" :key="login.title" v-for="login in loggedIn" >
-  <div class="card-header"><h3><strong>Name (नाम) :- </strong>{{login.name}}</h3></div>
   <div class="card-body text-white">
+      <div class="row">
+        <div class="col-sm-12">
+            <h4 class="card-title"><strong>Name (नाम) :- </strong>{{login.name}}</h4>
+          </div>
+      </div>
+      <br>
       <div class="row">
           <div class="col-sm-5">
             <h4 class="card-title"><strong>Contact Number (संपर्क) :- </strong>{{login.phone_no}}</h4>

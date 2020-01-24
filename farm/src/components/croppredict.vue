@@ -23,11 +23,11 @@
         </div>
         <div class="form-group col-md-8">
         <label for="contact">Humidity</label>
-        <input type="number" class="form-control" id="contact" v-model.number="hum" required>
+        <input type="float" class="form-control" id="contact" v-model.number="hum" required>
         </div>
         <div class="form-group col-md-8">
         <label for="contact">Rainfall</label>
-        <input type="number" class="form-control" id="contact" v-model.number="rain" required>
+        <input type="float" class="form-control" id="contact" v-model.number="rain" required>
         </div>
         <div class="form-group col-md-8">
         <label for="contact">Yield</label>
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group col-md-8">
         <label for="contact">Water</label>
-        <input type="number" class="form-control" id="contact" v-model.number="aow" required>
+        <input type="float" class="form-control" id="contact" v-model.number="aow" required>
         </div>
   <br>
   <div>

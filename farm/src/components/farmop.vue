@@ -48,7 +48,7 @@
 
                 <br>
                 <div>
-                <button type="submit" class="btn btn-primary btn-sm"><h5>Submit</h5></button>
+                <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 </form>
             </div>
@@ -57,13 +57,12 @@
 </template>
 
 <script>
-import farmnav from '@/components/farmnav'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    farmnav
+
   },
   data () {
     return {

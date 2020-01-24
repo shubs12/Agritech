@@ -1,4 +1,5 @@
 // /Users/athar/mongodb/bin/mongod.exe --dbpath=/Users/athar/mongodb-data
+// /Users/shubham/mongodb/bin/mongod.exe --dbpath=/Users/shubham/mongodb-data
 const { MongoClient, ObjectID } = require('mongodb')
 
 const connectionURL = 'mongodb://127.0.0.1:27017'

@@ -2,7 +2,7 @@
 <div>
         <div>
             <br>
-            <div><h2 style="color:black">Welcome , *farmer's name*</h2></div><br>
+            <div :key="login.title" v-for="login in loggedIn"><h2 style="color:black">Welcome , {{login.name}}</h2></div><br>
         </div>
 
 <div class="container">
@@ -17,14 +17,13 @@
 
 </template>
 <script>
-import farmnav from '@/components/farmnav'
+import { mapGetters } from 'vuex'
 import seeds from '@/components/seeds'
 import fertilizers from '@/components/fertilizers'
 import equipment from '@/components/equipment'
 export default {
   name: 'App',
   components: {
-    farmnav,
     seeds,
     fertilizers,
     equipment
@@ -44,6 +43,9 @@ export default {
     changeEquip: function () {
       this.pos = 'equipment'
     }
+  },
+  computed: {
+    ...mapGetters(['loggedIn'])
   }
 }
 </script>

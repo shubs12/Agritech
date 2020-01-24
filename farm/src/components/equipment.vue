@@ -6,30 +6,19 @@
        <b-form-input size="sm" class="mr-sm-2" placeholder="Search" v-model="search"></b-form-input>
     </b-navbar-nav></div>
         </div>
-     <b-container>
-        <b-row align-v="center">
-          <div class="card" v-for="job in filteredJobs" :key="job.id" :name="job.name">
-            <div>
-         <b-col>
-    <b-card
-    :title="name"
-    tag="article"
-    style="width: 21rem;"
-    class="mb-4"
-    id="card1"
-  ><b-card-text>
-    <h4 >{{ job.name}}</h4>
-    <ul>
-    <li class="card-text">Price :-{{ job.price }}</li>
-    </ul>
-    </b-card-text>
-  <b-button href="#" variant="primary" class="btn btn-primary btn-sm">Add to Cart</b-button>
-  </b-card>
-        </b-col>
-    </div>
-          </div>
-        </b-row>
-      </b-container>
+        <div class="row">
+          <div class="col-sm-4" v-for="job in filteredJobs" :key="job.id" :name="job.name">
+        <div class="card border-secondary mb-4" id="card2" style="max-width: 22rem;">
+          <div class="card-header"><h4>{{job.name}}</h4></div>
+          <div class="card-body text-secondary">
+          <h5 class="card-title">Price:- {{job.price}}</h5>
+          <p class="card-text">Description:- some quick description of the given crop</p>
+          <button type="submit" class="btn btn-primary">Add to Cart</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div>
        <b-pagination
        align="center"
       v-model="currentPage"
@@ -40,13 +29,12 @@
     ></b-pagination>
     </div>
     </div>
+    </div>
 </template>
 <script>
-import equipmentcard from '@/components/equipmentcard.vue'
 export default {
   name: 'equipment',
   components: {
-    equipmentcard
   },
   data () {
     return {
@@ -132,7 +120,7 @@ export default {
     margin-left: 5%;
     margin-right: 5%;
     border-style: solid;
-    border-width: 0px;
+    border-width: 1px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
 }
 h3 {

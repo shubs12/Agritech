@@ -1,12 +1,12 @@
 <template>
   <div>
     <article class="main-image">
-        <section>
+        <div>
           <h1>Fill form to predict Crop or Fertilizer</h1>
           <br>
           <router-link to="/croppredict"><button class="btn btn-x1 btn-light" >Crop Prediction</button></router-link>
           <router-link to="/fertilizerpredict"><button class="btn btn-x1 btn-light" >Fertilizer Prediction</button></router-link>
-        </section>
+        </div>
       </article>
   </div>
 </template>
@@ -18,9 +18,7 @@ export default {
 article{
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0 10px;
+  padding-top: 5%;
 }
 .btn-x1{
   padding: 15px;
@@ -30,7 +28,6 @@ article{
 .main-image {
   min-height: 100vh;
   background-size: cover;
-  padding: 0 10px;
   text-align: center;
   width: 100%;
 }

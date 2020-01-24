@@ -7,7 +7,7 @@ import farmop from '@/components/farmop'
 import fmarket from '@/components/fmarket'
 import home from '@/components/home'
 import scheme from '@/components/scheme'
-import navmarket from '@/components/navmarket'
+import market from '@/components/market'
 import services from '@/components/services'
 import croppredict from '@/components/croppredict'
 import fertilizerpredict from '@/components/fertilizerpredict'
@@ -53,9 +53,9 @@ export default new Router({
       component: scheme
     },
     {
-      path: '/navmarket',
-      name: 'navmarket',
-      component: navmarket
+      path: '/market',
+      name: 'market',
+      component: market
     },
     {
       path: '/services',

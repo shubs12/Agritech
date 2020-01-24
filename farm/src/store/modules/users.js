@@ -42,6 +42,7 @@ const mutations = {
   newUsers (state, user) {
     axios.post('http://localhost:3000/users/', user)
       .then((response) => {
+        alert('Signned in sucessfully')
         console.log(response)
       })
       .catch((error) => {
@@ -76,6 +77,7 @@ const mutations = {
     })
       .then((response) => {
         state.crops.push(crop)
+        alert('sucessfully added')
         console.log(response)
       })
       .catch((error) => {

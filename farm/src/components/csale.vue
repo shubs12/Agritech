@@ -3,16 +3,15 @@
 <div class="card" style="margin:5%" id="card2" >
   <div class="card-header"><h2>Crops for sale ( बिक्री के लिए फसल )</h2></div>
   <div class=" row">
-    <div class="col-sm-4" :key="crops.id" v-for="crops in allCrops">
+    <div class="col-sm-4" :key="crops.id" v-for="crops in allCrops" >
   <div class="card-body text-dark">
-<div class="card" id="card1">
+<div class="card" id="card2">
   <div class="card-body" >
-    <h5 class="card-title">{{crops.item}}</h5>
+    <h4 class="card-title">{{crops.item}}</h4>
     <ul>
     <li class="card-text"> Information :- {{crops.desc}}</li>
     <li class="card-text">Price :- {{crops.cost}}</li>
     <li class="card-text">Availaibility :- {{crops.available}}</li>
-    <li class="card-text">sold :- *sold*</li>
     </ul>
   </div>
 </div>
@@ -64,6 +63,16 @@ h2 {
 }
 .card-title {
   font-size: 25px;
+}
+#card2{
+    margin-left: 5%;
+    margin-right: 5%;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+#progress{
+  border-block-color: black;
 }
 
 </style>

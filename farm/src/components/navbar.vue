@@ -25,11 +25,11 @@
         <a class="nav-link"> Sign up </a>
         </router-link>
       </li>
-      <!-- <li class="nav-item">
-        <router-link to="/navmarket">
+      <li class="nav-item">
+        <router-link to="/market">
         <a class="nav-link"> Market </a>
         </router-link>
-      </li> -->
+      </li>
      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
@@ -74,11 +74,11 @@
       </li>
       <li class="nav-item">
         <router-link to="/profile">
-        <a class="nav-link"> profile </a>
+        <a class="nav-link"> Profile </a>
         </router-link>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" @click="onSubmit"> logout </a>
+        <a class="nav-link" @click="onSubmit"> Logout </a>
       </li>
      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,10 +95,11 @@
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>   &ensp
       </li> -->
     </ul>
-  <!--<b-button id="show-btn" class="btn btn-secondary" style="margin-right:10px;" @click="$bvModal.show('bv-modal-example')">Cart &ensp;<span class="badge badge-light">5 </span>
-        <span class="sr-only">Total items</span></b-button>
+    <router-link to="/cart" >
+  <button id="show-btn" class="btn btn-secondary" style="margin-right:10px;" >Cart &ensp;<span class="badge badge-light">5</span>
+      </button> </router-link>
 
-  <b-modal id="bv-modal-example">
+  <!-- <b-modal id="bv-modal-example">
     <div class="text-center">
       <h3>Hello From This Modal!</h3>
     </div>
